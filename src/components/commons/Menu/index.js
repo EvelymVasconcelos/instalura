@@ -1,5 +1,6 @@
 import React from 'react';
 import { Logo } from '../../../theme/Logo';
+import { Button } from '../Button';
 import { MenuWrapper } from './styles/MenuWrapper';
 
 //Componente de Menu
@@ -36,12 +37,14 @@ export default function Menu(){
       </MenuWrapper.CentralSide>
       {/* Buttons Area (Direita) */}
       <MenuWrapper.RightSide>
-        <button>
+        {/* Aqui estamos passando uma props particular desse button chamada de ghost para o nosso component Button */}
+        {/* A variant permite que o button receba qualquer modificação de estilo do theme */}
+        <Button ghost variant="secondary.main">
           Entrar
-        </button>
-        <button>
+        </Button>
+        <Button variant="primary.main">
           Cadastrar
-        </button>
+        </Button>
       </MenuWrapper.RightSide>
 
     </MenuWrapper>
