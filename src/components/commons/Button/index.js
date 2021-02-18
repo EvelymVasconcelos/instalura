@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 //importar exatamente oque vc quer usar para não sobrecarregar a aplicação
 import get from 'lodash/get'
+import { TextStyleVariantsMap } from '../../foundation/Text'
 
 const ButtonGhost = css`
     // recebemos de forma dinâmica a variant de color, por meio do uso da função get do lodash
@@ -24,6 +25,10 @@ export const Button = styled.button`
     transition: opacity ${({ theme }) => theme.transition};
     border-radius: ${({ theme }) => theme.borderRadius};
     ${({ ghost }) => (ghost ? ButtonGhost : ButtonDefault)}
+
+    //aqui passamos para o TextStyleVariantsMap o estilo de texto que queremos para o nosso botão
+    ${TextStyleVariantsMap.smallestException}
+
     &:hover,
     &:focus {
         opacity: .5;

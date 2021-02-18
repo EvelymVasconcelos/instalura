@@ -1,5 +1,6 @@
 import React from 'react';
 import { Logo } from '../../../theme/Logo';
+import Text from '../../foundation/Text';
 import { Button } from '../Button';
 import { MenuWrapper } from './styles/MenuWrapper';
 
@@ -29,9 +30,10 @@ export default function Menu(){
       <MenuWrapper.CentralSide>
         {links.map((link) => (
             <li key={link.url}>
-              <a href={link.url}>
+              {/* Aqui vc pode enviar a como uma prop chamada tag para o component Text */}
+              <Text tag="a" variant="smallestException" href={link.url}>
                 {link.text}
-              </a>
+              </Text>
             </li>
         ))}
       </MenuWrapper.CentralSide>
