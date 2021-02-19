@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 //importar exatamente oque vc quer usar para não sobrecarregar a aplicação
 import get from 'lodash/get'
 import { TextStyleVariantsMap } from '../../foundation/Text'
+import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia'
 
 const ButtonGhost = css`
     // recebemos de forma dinâmica a variant de color, por meio do uso da função get do lodash
@@ -33,5 +34,14 @@ export const Button = styled.button`
     &:focus {
         opacity: .5;
     }
+
+    ${breakpointsMedia({
+        xs: css`
+            ${TextStyleVariantsMap.smallestException}
+        `,
+        md: css`
+            ${TextStyleVariantsMap.paragraph1}
+        `
+    })}
 
 ` 
