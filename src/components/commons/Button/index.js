@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 import get from 'lodash/get'
 import { TextStyleVariantsMap } from '../../foundation/Text'
 import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia'
+import { propToStyle } from '../../../theme/utils/propToStyle'
 
 const ButtonGhost = css`
     // recebemos de forma dinâmica a variant de color, por meio do uso da função get do lodash
@@ -43,5 +44,8 @@ export const Button = styled.button`
             ${TextStyleVariantsMap.paragraph1}
         `
     })}
+
+    ${propToStyle('margin')}
+    ${propToStyle('display')}
 
 ` 
