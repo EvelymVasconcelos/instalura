@@ -31,9 +31,9 @@ export default function Home() {
       <Grid.Container>
         <Grid.Row>
           <Grid.Col
-            // significa que vai pular uma coluna do grid
-            offset={1}
-            // significa que no mobile vai ocupar 5 colunas e destop 5 colunas do grid
+            // significa que vai pular uma coluna do grid no desktop
+            offset={{ xs: 0, md:1 }}
+            // significa que no mobile vai ocupar 12 colunas e destop 5 colunas do grid
             value={{ xs: 12, md: 5}}
           >
 
@@ -80,10 +80,9 @@ export default function Home() {
 
           </Grid.Col>
           <Grid.Col value={{ xs: 12, md: 6}}>
-            <img style={{ display: 'block', margin: 'auto' }} src='https://bootcamp-alura-01-git-modulo01.omariosouto.vercel.app/images/phones.png'/>
+            <img style={{ display: 'block', margin: 'auto' }} src="https://bootcamp-alura-01-git-modulo01.omariosouto.vercel.app/images/phones.png"/>
           </Grid.Col>
         </Grid.Row>
-
       </Grid.Container>
 
       <Footer />

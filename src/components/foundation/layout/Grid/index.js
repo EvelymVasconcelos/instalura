@@ -123,6 +123,5 @@ export const Grid = {
         margin-right: -16px;
         margin-left: -16px;
     `,
-    Col
-    
+    Col,
 }
