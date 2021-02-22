@@ -8,7 +8,7 @@ export function propToStyle(propName){
       const propValue = props[propName]
       console.log('porpValue', propValue)
   
-      if(typeof propValue === 'string'){
+      if(typeof propValue === 'string' || typeof propValue === 'number'){
         //podemos fazer nosso retorno com a sintxe de objetos, que faria a mesma coisa da sintaxe de string
         return {
           //textAlign: props.textAlign, poderia ser passada dessa forma caso fosse sintaxe de string

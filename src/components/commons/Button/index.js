@@ -1,21 +1,22 @@
-import styled, { css } from 'styled-components'
-//importar exatamente oque vc quer usar para não sobrecarregar a aplicação
-import get from 'lodash/get'
-import { TextStyleVariantsMap } from '../../foundation/Text'
-import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia'
-import { propToStyle } from '../../../theme/utils/propToStyle'
+import styled, { css } from 'styled-components';
+// importar exatamente oque vc quer usar
+// para não sobrecarregar a aplicação
+import get from 'lodash/get';
+import { TextStyleVariantsMap } from '../../foundation/Text';
+import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
+import { propToStyle } from '../../../theme/utils/propToStyle';
 
 const ButtonGhost = css`
     // recebemos de forma dinâmica a variant de color, por meio do uso da função get do lodash
     // onde passamos como primeiro parâmetro o objeto theme, e o segundo parâmetro recebe uma string para acessar oque queremos
     color: ${({ theme, variant }) => get(theme, `colors.${variant}.color`)};
     background-color: transparent;
-`
+`;
 const ButtonDefault = css`
     color: white;
     background-color: ${({ theme, variant }) => get(theme, `colors.${variant}.color`)};
     color: ${({ theme, variant }) => get(theme, `colors.${variant}.contrastText`)};
-`
+`;
 
 export const Button = styled.button`
     border: 0;
@@ -37,15 +38,15 @@ export const Button = styled.button`
     }
 
     ${breakpointsMedia({
-        xs: css`
+    xs: css`
             ${TextStyleVariantsMap.smallestException}
         `,
-        md: css`
+    md: css`
             ${TextStyleVariantsMap.paragraph1}
-        `
-    })}
+        `,
+  })}
 
     ${propToStyle('margin')}
     ${propToStyle('display')}
 
-` 
+`;
